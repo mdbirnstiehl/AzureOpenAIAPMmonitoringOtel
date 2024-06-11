@@ -26,10 +26,11 @@ OpenTelemetry is a powerful and widely adopted observability tool that you can u
 
 4. Set the following environment variable using your Azure OpenAI and Elastic credentials:
 
-- export AZURE_OPENAI_API_KEY=<your-Azure-OpenAI-API-key>
-- export AZURE_OPENAI_ENDPOINT=<your-Azure-OpenAI-endpoint>
-- export OTEL_EXPORTER_OTLP_AUTH_HEADER=<your-otel-exporter-auth-header>
-- export OTEL_EXPORTER_OTLP_ENDPOINT=<your-otel-exporter-endpoint>
+- export AZURE_OPENAI_API_KEY="your-Azure-OpenAI-API-key"
+- export AZURE_OPENAI_ENDPOINT="your-Azure-OpenAI-endpoint"
+- export OPENAI_API_VERSION="your_api_version"
+- export OTEL_EXPORTER_OTLP_AUTH_HEADER="your-otel-exporter-auth-header"
+- export OTEL_EXPORTER_OTLP_ENDPOINT="your-otel-exporter-endpoint"
 
 5. Check out the example Python application.
 
