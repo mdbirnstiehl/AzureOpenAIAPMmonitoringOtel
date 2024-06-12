@@ -32,7 +32,7 @@ OpenTelemetry is a powerful and widely adopted observability tool that you can u
 - export OTEL_EXPORTER_OTLP_AUTH_HEADER="your-otel-exporter-auth-header"
 - export OTEL_EXPORTER_OTLP_ENDPOINT="your-otel-exporter-endpoint"
 
-5. Check out the example Python application.
+5. Run the app and go to `http://localhost:8000/completion`.
 
 ## Example Application
 
