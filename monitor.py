@@ -1,5 +1,3 @@
-from openai import AzureOpenAI
-import openai
 import json
 from functools import wraps
 from opentelemetry import trace
@@ -51,6 +49,3 @@ def count_completion_requests_and_tokens(func):
             span.set_attribute("response", strResponse)
         return response
     return wrapper
-
-# Monkey-patch the openai.Completion.create function
-openai.chat.completions.create = count_completion_requests_and_tokens(openai.chat.completions.create)
