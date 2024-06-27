@@ -15,24 +15,24 @@ OpenTelemetry is a powerful and widely adopted observability tool that you can u
 1. Set up an Elastic Cloud Account and create a deployment.
 2. Install the required Python libraries.
 
- - pip3 install opentelemetry-api
- - pip3 install opentelemetry-sdk
- - pip3 install opentelemetry-exporter-otlp
- - pip3 install opentelemetry-instrumentation
- - pip3 install opentelemetry-instrumentation-requests
- - pip3 install openai
- - pip3 install AzureOpenAI
- - pip3 install flask
+```
+pip3 install openai flask opentelemetry-distro[otlp] opentelemetry-instrumentation
+```
 
 4. Set the following environment variable using your Azure OpenAI and Elastic credentials:
 
-- export AZURE_OPENAI_API_KEY="your-Azure-OpenAI-API-key"
-- export AZURE_OPENAI_ENDPOINT="your-Azure-OpenAI-endpoint"
-- export OPENAI_API_VERSION="your_api_version"
-- export OTEL_EXPORTER_OTLP_AUTH_HEADER="your-otel-exporter-auth-header"
-- export OTEL_EXPORTER_OTLP_ENDPOINT="your-otel-exporter-endpoint"
+```
+export AZURE_OPENAI_API_KEY="your-Azure-OpenAI-API-key"
+export AZURE_OPENAI_ENDPOINT="your-Azure-OpenAI-endpoint"
+export OPENAI_API_VERSION="your_api_version"
+export OTEL_EXPORTER_OTLP_HEADERS="Authorization=Bearer%20<your-otel-exporter-auth-header>"
+export OTEL_EXPORTER_OTLP_ENDPOINT="your-otel-exporter-endpoint"
+export OTEL_RESOURCE_ATTRIBUTES=service.name=your-service-name
+```
 
-5. Run the app and go to `http://localhost:8000/completion`.
+5. Run `opentelemetry-instrument flask --app counter run -p 8000`
+
+6. Go to `http://localhost:8000/completion`.
 
 ## Example Application
 
